@@ -58,8 +58,8 @@ header {
   left: 0;
   width: 100%;
   padding: 0.2rem 10%;
-  /**background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(50px);**/
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,7 +105,7 @@ header a img {
   border-radius: 50%;
 }
 
-.container-contents .navbar a {
+.navbar a {
   font-size: 1.7rem;
   color: white;
   text-decoration: none;

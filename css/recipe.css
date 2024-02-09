@@ -16,6 +16,72 @@ body {
   font-family: "popins", sans-serif;
 }
 
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.2rem 10%;
+  /**background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);**/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  background: #3f3b665e;
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(134, 153, 238, 0.281),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.header:hover::after {
+  left: 100%;
+}
+
+header a img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.navbar a {
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 2.5rem;
+}
+
+.navbar a:hover {
+  opacity: 0.4s;
+  color: rgb(52, 9, 240);
+}
+
 .btn {
   font-family: inherit;
   cursor: pointer;
@@ -43,6 +109,7 @@ body {
   /* background: rgb(60, 87, 60); */
   text-align: center;
   height: auto;
+  margin-top: 4rem;
 }
 
 .meal-search {
