@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SafariQuest-The Taste of Adventure</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/10.9.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/10.9.0/firebase-auth-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/10.9.0/firebase-database-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.9.0/firebase-firestore-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.9.0/firebase-functions-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.9.0/firebase-messaging-compat.js"
+    ></script>
+    <script defer src="/__/firebase/10.9.0/firebase-storage-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/10.9.0/firebase-analytics-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.9.0/firebase-remote-config-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/10.9.0/firebase-performance-compat.js"
+    ></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+  <body>
+    <div class="contents">
+      <div class="container-contents">
+        <header class="header">
+          <a href="#"><img src="./img/SQ-logo.png" /></a>
+
+          <!-- <input type="checkbox" id="check" />
+        <label for="check" class="icons">
+          <i class="fa fa-bars" aria-hidden="true" id="menu_icon"></i>
+          <i class="fa fa-times" aria-hidden="true" id="close_icon"></i>
+        </label> -->
+
+          <nav class="navbar">
+            <a href="#home_content" style="--i: 0">Home</a>
+            <a href="#dest" style="--i: 1">Destinations</a>
+            <a href="recipe.html" style="--i: 2">Cuisine & Blog</a>
+            <a href="tours.html" style="--1: 2">My Account</a>
+
+            <button class="nav__el nav__el--cta" id="signUp-btn">
+              Sign In
+            </button>
+          </nav>
+        </header>
+
+        <div class="home-content">
+          <h1>SAFARI QUEST</h1>
+          <h6>
+            WHERE TASTE <br />
+            MEETS <br />
+            ADVENTURE
+          </h6>
+          <p>Taste the World, Explore the Flavours of Travel</p>
+        </div>
+      </div>
+
+      <!-- DESTINATIONS PAGE -->
+
+      <main class="main">
+        <h3><span class="dest" id="dest">YOUR FAV DESTINATIONS</span></h3>
+        <form action="/search" method="get">
+          <input type="text" name="q" placeholder="Search..." />
+          <input type="submit" value="Search" />
+        </form>
+        <div class="card-container">
+          <div class="card">
+            <div class="card__header">
+              <div class="card__picture">
+                <div class="card__picture-overlay">&nbsp;</div>
+                <img
+                  src="img/tour-1-cover.jpg"
+                  alt="Tour 1"
+                  class="card__picture-img"
+                />
+              </div>
+
+              <h3 class="heading-tertirary">
+                <span>Fun at the Beaches</span>
+              </h3>
+            </div>
+
+            <div class="card__details">
+              <h4 class="card__sub-heading">Around the Globe</h4>
+              <p class="card__text">
+                Breathtaking Beaches around the world, discover your next stop
+              </p>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-map-pin"></use>
+                </svg>
+                <span>Maimi, USA</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-calendar"></use>
+                </svg>
+                <span>Mark your Calender</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-flag"></use>
+                </svg>
+                <span>stops</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-user"></use>
+                </svg>
+                <span>Join the crowd</span>
+              </div>
+            </div>
+
+            <div class="card__footer">
+              <p>
+                <span class="card__footer-value">At low </span>
+                <span class="card__footer-text">costs</span>
+              </p>
+              <p class="card__ratings">
+                <span class="card__footer-value">4.9</span>
+                <span class="card__footer-text">rating (34)</span>
+              </p>
+              <a href="#" class="btn btn--green btn--small">Details</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <div class="card__picture">
+                <div class="card__picture-overlay">&nbsp;</div>
+                <img
+                  src="img/tour-2-cover.jpg"
+                  alt="Tour 1"
+                  class="card__picture-img"
+                />
+              </div>
+
+              <h3 class="heading-tertirary">
+                <span>Beautiful hotels</span>
+              </h3>
+            </div>
+
+            <div class="card__details">
+              <h4 class="card__sub-heading">Around the Globe</h4>
+              <p class="card__text">
+                Exploring the jaw-dropping Italy east coast hotels and motels
+              </p>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-map-pin"></use>
+                </svg>
+                <span>yyy, Italy</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-calendar"></use>
+                </svg>
+                <span>Mark your calender</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-flag"></use>
+                </svg>
+                <span>stops</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-user"></use>
+                </svg>
+                <span>Join the crowd</span>
+              </div>
+            </div>
+
+            <div class="card__footer">
+              <p>
+                <span class="card__footer-value">At low</span>
+                <span class="card__footer-text">costs</span>
+              </p>
+              <p class="card__ratings">
+                <span class="card__footer-value">4.8</span>
+                <span class="card__footer-text">rating (20)</span>
+              </p>
+              <a href="#" class="btn btn--green btn--small">Details</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <div class="card__picture">
+                <div class="card__picture-overlay">&nbsp;</div>
+                <img
+                  src="img/tour-3-cover.jpg"
+                  alt="Tour 1"
+                  class="card__picture-img"
+                />
+              </div>
+
+              <h3 class="heading-tertirary">
+                <span>The Snow Adventurer</span>
+              </h3>
+            </div>
+
+            <div class="card__details">
+              <h4 class="card__sub-heading">Difficult 3-day tour</h4>
+              <p class="card__text">
+                Exciting adventure in the snow with snowboarding and skiing
+              </p>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-map-pin"></use>
+                </svg>
+                <span>Aspen, USA</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-calendar"></use>
+                </svg>
+                <span>January 2022</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-flag"></use>
+                </svg>
+                <span>2 stops</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-user"></use>
+                </svg>
+                <span>10 people</span>
+              </div>
+            </div>
+
+            <div class="card__footer">
+              <p>
+                <span class="card__footer-value">$697</span>
+                <span class="card__footer-text">per person</span>
+              </p>
+              <p class="card__ratings">
+                <span class="card__footer-value">4.9</span>
+                <span class="card__footer-text">rating (7)</span>
+              </p>
+              <a href="#" class="btn btn--green btn--small">Details</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <div class="card__picture">
+                <div class="card__picture-overlay">&nbsp;</div>
+                <img
+                  src="img/tour-4-cover.jpg"
+                  alt="Tour 1"
+                  class="card__picture-img"
+                />
+              </div>
+
+              <h3 class="heading-tertirary">
+                <span>The City Wanderer</span>
+              </h3>
+            </div>
+
+            <div class="card__details">
+              <h4 class="card__sub-heading">Easy 7-day tour</h4>
+              <p class="card__text">
+                Living the life of Wanderlust in the US' most beatiful cities
+              </p>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-map-pin"></use>
+                </svg>
+                <span>NYC, USA</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-calendar"></use>
+                </svg>
+                <span>March 2021</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-flag"></use>
+                </svg>
+                <span>3 stops</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-user"></use>
+                </svg>
+                <span>20 people</span>
+              </div>
+            </div>
+
+            <div class="card__footer">
+              <p>
+                <span class="card__footer-value">$997</span>
+                <span class="card__footer-text">per person</span>
+              </p>
+              <p class="card__ratings">
+                <span class="card__footer-value">4.8</span>
+                <span class="card__footer-text">rating (31)</span>
+              </p>
+              <a href="#" class="btn btn--green btn--small">Details</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <div class="card__picture">
+                <div class="card__picture-overlay">&nbsp;</div>
+                <img
+                  src="img/tour-5-cover.jpg"
+                  alt="Tour 1"
+                  class="card__picture-img"
+                />
+              </div>
+
+              <h3 class="heading-tertirary">
+                <span>The Park Camper</span>
+              </h3>
+            </div>
+
+            <div class="card__details">
+              <h4 class="card__sub-heading">Medium-Difficult 10-day tour</h4>
+              <p class="card__text">
+                Breathing in Nature in America's most spectacular National Parks
+              </p>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-map-pin"></use>
+                </svg>
+                <span>Las Vegas, USA</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-calendar"></use>
+                </svg>
+                <span>August 2021</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-flag"></use>
+                </svg>
+                <span>4 stops</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-user"></use>
+                </svg>
+                <span>15 people</span>
+              </div>
+            </div>
+
+            <div class="card__footer">
+              <p>
+                <span class="card__footer-value">$1,497</span>
+                <span class="card__footer-text">per person</span>
+              </p>
+              <p class="card__ratings">
+                <span class="card__footer-value">4.9</span>
+                <span class="card__footer-text">rating (19)</span>
+              </p>
+              <a href="/tour.html" class="btn btn--green btn--small">Details</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__header">
+              <div class="card__picture">
+                <div class="card__picture-overlay">&nbsp;</div>
+                <img
+                  src="img/tour-6-cover.jpg"
+                  alt="Tour 1"
+                  class="card__picture-img"
+                />
+              </div>
+
+              <h3 class="heading-tertirary">
+                <span>The Sports Lover</span>
+              </h3>
+            </div>
+
+            <div class="card__details">
+              <h4 class="card__sub-heading">Difficult 14-day tour</h4>
+              <p class="card__text">
+                Surfing, skating, parajumping, rock climbing and more, all in
+                one tour
+              </p>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-map-pin"></use>
+                </svg>
+                <span>California, USA</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-calendar"></use>
+                </svg>
+                <span>July 2021</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-flag"></use>
+                </svg>
+                <span>5 stops</span>
+              </div>
+              <div class="card__data">
+                <svg class="card__icon">
+                  <use xlink:href="img/icons.svg#icon-user"></use>
+                </svg>
+                <span>8 people</span>
+              </div>
+            </div>
+
+            <div class="card__footer">
+              <p>
+                <span class="card__footer-value">$1,997</span>
+                <span class="card__footer-text">per person</span>
+              </p>
+              <p class="card__ratings">
+                <span class="card__footer-value">4.7</span>
+                <span class="card__footer-text">rating (23)</span>
+              </p>
+              <a href="#" class="btn btn--green btn--small">Details</a>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div class="footer">
+        <div class="footer__logo">
+          <img src="img/SQ-logo.png" alt="Safari logo" />
+        </div>
+        <ul class="footer__nav">
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Download apps</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Recipes</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <p class="footer__copyright">
+          &copy; by MargaretNannyonjo@(SafariQuest). All rights reserved.
+        </p>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
